@@ -1,0 +1,9 @@
+.crossline {
+    text-decoration: line-through;
+}
+th{
+    font-size: 1.15rem;
+}
+table {
+    margin: 5px 10px;
+}
