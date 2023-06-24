@@ -2,8 +2,6 @@ import React from "react";
 import Done from './Done';
 import All from './All';
 import ToDo from "./ToDo";
-import { useDispatch, useSelector } from "react-redux";
-import {increment} from '../features/reducer';
 
 
 const imgSize = {

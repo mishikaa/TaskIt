@@ -4,12 +4,15 @@ import Button from "./Button";
 
 const AddTodo = () => {
     const [description, setDescription] = useState("");
+    
     const TodoAdd = (e => {
         // console.log(e.target); //It contains the input text
         setDescription(e.target.value);
     })
+
     const submitForm = async(e) => {
         e.preventDefault(); //Prevents refreshing the page on submitting
+        
         try {
             const body = {description};
             const res = await fetch("http://localhost:5000/todos",{
@@ -17,7 +20,6 @@ const AddTodo = () => {
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             });
-            window.location = "/";
         } catch (error) {
             console.error(error.message);
         }
@@ -30,13 +32,13 @@ const AddTodo = () => {
                 <Button variant="primary">+</Button>
             </form> 
         </div>
-        <div>
+        {/* <div>
             <SelectButton>
                 <option value="all">All</option>
                 <option value="todo">ToDo</option>
                 <option value="done">Done</option>
             </SelectButton>
-        </div>
+        </div> */}
         </>
     )
 }

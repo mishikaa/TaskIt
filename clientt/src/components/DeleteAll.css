@@ -1,26 +1,13 @@
-* {
-    overflow-x: hidden;
-}
-
 /* DeleteAll component styling */
 .deleteAll{
-    width: 3px;
+    width: 4rem;
     margin: 20px;
     position: absolute;
-    right: 0px;
+    right: 20px;
     bottom: 0px;
 }
 .deleteAll:hover {
-    width: 3px;
+    width: 4.15rem;
     border-radius: 50px;
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
-}
-
-/* Navbar component styling */
-.navbar-brand{
-    text-shadow: 2px 2px 1px black;
-    letter-spacing: 0.35rem;
-}
-.navbar-brand span{
-    color: #aacc00;
 }

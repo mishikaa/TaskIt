@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import DivBar from "./DivBar";
 import ToDo from "./ToDo";
 import All from "./All";
+import './DeleteAll.css';
 
 const ListTodos = () => {
     const [todos, setToDos] = useState([]);
@@ -42,19 +43,19 @@ const ListTodos = () => {
     return (
         <Fragment>
             <DivBar todos={todos} setToDos={setToDos} countAll={todos.length} countDone={doneToDos.length}/>
+            
             <table className="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Mark as done</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                    <All todos={todos}/>    
-                </tbody>
+              <thead>
+                <tr>
+                  <th scope="col">Mark as done</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <All todos={todos}/>    
+              </tbody>
             </table>
 
             {/* DELETE ALL */}
