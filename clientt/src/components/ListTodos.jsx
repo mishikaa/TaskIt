@@ -9,7 +9,7 @@ import './DeleteAll.css';
 const ListTodos = () => {
     const [todos, setToDos] = useState([]);
     const [doneToDos, setDoneToDos] = useState([]);
-
+    
     const getTodos = async() => {
         try {
             const res = await fetch("http://localhost:5000/todos");

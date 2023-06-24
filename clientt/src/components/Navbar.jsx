@@ -22,7 +22,7 @@ const Navbar = () => {
             <nav style={navStyle}>
                 <div>
                   <img src="./assets/logo.svg" alt="logo" style={imgStyling}/>
-                  <span class="navbar-brand">Task<span>It</span></span>
+                  <span className="navbar-brand">Task<span>It</span></span>
                 </div>
             </nav>
         </>

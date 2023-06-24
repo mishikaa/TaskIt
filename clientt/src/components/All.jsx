@@ -2,6 +2,7 @@ import React,{Fragment} from 'react'
 import EditTodo from "./EditTodo";
 import Done from './Done';
 import ToDo from './ToDo';
+
 export default function All({todos, setToDos, doneToDos, setDoneToDos}) {
     //Delete function to delete a particular todo
     const DeleteTodo = async(id) => {

@@ -1,18 +1,12 @@
-import { createStore } from "redux";
+import {configureStore} from "@reduxjs/toolkit";
+import todoReducer from "../features/todoSlice";
+import doneReducer from "../features/doneSlice";
 
-const reducerFn = (state = {counter: 0}, action) => {
-    
-    // Synchronous function
-    // Should not mutate the original state (should always be a copy of the original state)
-    if(action.type === "INC") {
-        return {counter: state.counter+1};
+const store= configureStore({
+    reducer: {
+        todo: todoReducer,
+        done: doneReducer
     }
-    if(action.type=== "DEC") {
-        return {counter: state.counter-1};
-    }
-    return state;
-}
-
-const store= createStore(reducerFn);
+});
 
 export default store;

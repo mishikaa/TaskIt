@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const pool = require('./db');
 const { query } = require('express');
+const path = require('path')
 
 const bcrypt = require('bcrypt');
 const session = require('express-session');
@@ -14,14 +15,14 @@ app.use(express.urlencoded({extended: true}));
 
 // CORS to enable to fetch data from client side even after it being on different port
 app.use(cors({
-    origin: ['http://localhost:5000'],
+    origin: ['http://localhost:3000'],
     credentials: true
   }));
 
 //ROUTES
 
 app.get('/signup', (req, res, next) => {
-    res.send('hello');
+    res.send('signup');
 })
 
 //Creating a todo
@@ -110,6 +111,14 @@ app.delete('/todos/:id', async(req, res) => {
     }
     
 });
+
+// DEPLOYMENT 
+const __dirname1 = path.resolve() 
+app.use(express.static(path.join(__dirname1, "/clientt/build")))
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname1, "clientt", "build", "index.html"))
+})
 
 app.listen(5000, () => {
     console.log("Listening on port 5000");

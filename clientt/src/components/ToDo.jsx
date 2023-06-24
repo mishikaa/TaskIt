@@ -2,25 +2,25 @@ import { format } from 'date-fns';
 
 import React from 'react';
 import { useState } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { COMPLETE_TODO } from '../features/todoSlice';
 
 export default function ToDo(props) {
-  var [isDone, setDone] = useState(false);
-//   const myState = useSelector((state) => state.counter.value);
-  // const dispatch = useDispatch();
-  // console.log(myState);
+    var [isDone, setDone] = useState(false);
+    const todoss = useSelector((state)=>state.todo);
+
+    const dispatch = useDispatch();
   
-  const markAsDone = async() => {    
-      // dispatch(increment());
-      setDone(!isDone);
-      props.setDoneArr((prev) => {
-          if(!isDone) {
-          return [...prev, props.todo]
-      } else {
-          return [...prev]
-      }
-  }
-  )
+    const markAsDone = async() => {    
+        setDone(!isDone);
+        props.setDoneArr((prev) => {
+            if(!isDone) {
+            return [...prev, props.todo]
+        } else {
+            return [...prev]
+        }
+    }
+    )
 };
     return (
         <>
